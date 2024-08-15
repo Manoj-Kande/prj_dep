@@ -9,7 +9,7 @@ app.use(cors());
 app.use(express.json()); 
 
 app.get("/",(req,res)=>{
-    res.send("hello world");
+    res.send("backend i sworking properly");
 });
 // app.post('/questions', async (req, res) => {
 //     let q = [];
