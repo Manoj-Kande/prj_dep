@@ -25,7 +25,7 @@ const AddQuestion = () => {
   };
 
   const handleSave = () => {
-    fetch('http://localhost:5000/questions/add', {
+    fetch('https://frontend-five-mauve-98.vercel.app/questions/add', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'

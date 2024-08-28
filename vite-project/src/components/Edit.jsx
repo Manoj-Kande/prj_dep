@@ -44,7 +44,7 @@ const EditPage = () => {
   };
 
   const handleSave = () => {
-    fetch(`http://localhost:5000/questionsedit/${id}`, {
+    fetch(`https://frontend-five-mauve-98.vercel.app/questionsedit/${id}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json'
