@@ -6,14 +6,14 @@ const AdminPage = () => {
   const [questions, setQuestions] = useState([]);
 
   useEffect(() => {
-    fetch('https://flash-cards-b7os.vercel.app//questions/')
+    fetch('http://localhost:5000/questions/')
       .then(response => response.json())
       .then(data => setQuestions(data))
       .catch(error => console.error('Error fetching questions:', error));
   }, []);
 
   const handleDelete = (id) => {
-    fetch(`https://flash-cards-b7os.vercel.app/questions/${id}/delete`, {
+    fetch(`http://localhost:5000/questions/${id}/delete`, {
       method: 'DELETE'
     })
       .then(response => {

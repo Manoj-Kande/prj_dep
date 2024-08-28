@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 
 async function main() {
-    await mongoose.connect("mongodb+srv://manojkande333:manojkande@cluster0.xeld4nt.mongodb.net/");
+    await mongoose.connect("mongodb+srv://2210030472:2210030472@cluster0.hrp4gzh.mongodb.net/");
 }
 
 main()
@@ -11,6 +11,7 @@ main()
 .catch((err) => {
     console.log("Error while connecting to database", err);
 });
+
 
 
 const questionSchema = new mongoose.Schema({

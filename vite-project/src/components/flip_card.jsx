@@ -15,7 +15,7 @@ const FlipPage = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch('https://flash-cards-b7os.vercel.app/questions')
+    fetch('http://localhost:5000/questions')
       .then(response => {
         if (response.ok) {
           // throw new Error('Network response was not ok');

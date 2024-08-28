@@ -16,7 +16,7 @@ const EditPage = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch(`https://flash-cards-b7os.vercel.app/questions/${id}`)
+    fetch(`http://localhost:5000/questions/${id}`)
       .then(response => response.json())
       .then(data => {
         setQuestion(data);
@@ -44,7 +44,7 @@ const EditPage = () => {
   };
 
   const handleSave = () => {
-    fetch(`https://flash-cards-b7os.vercel.app/questionsedit/${id}`, {
+    fetch(`http://localhost:5000/questionsedit/${id}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json'
