@@ -6,14 +6,14 @@ const AdminPage = () => {
   const [questions, setQuestions] = useState([]);
 
   useEffect(() => {
-    fetch('https://backend-wine-theta.vercel.app/questions/')
+    fetch('http://localhost:5000/questions')
       .then(response => response.json())
       .then(data => setQuestions(data))
       .catch(error => console.error('Error fetching questions:', error));
   }, []);
 
   const handleDelete = (id) => {
-    fetch(`https://backend-wine-theta.vercel.app/questions/${id}/delete`, {
+    fetch(`http://localhost:5000/questions/${id}`, {
       method: 'DELETE'
     })
       .then(response => {
@@ -29,9 +29,7 @@ const AdminPage = () => {
   return (
     <div className="admin-container">
       <h1>Admin Page</h1>
-      <Link to="/flash_cards/add-question" className="add-btn">Add Question</Link>
-      <Link to="/flash_cards" className="add-btn">Back To Home</Link>
-      
+      <Link to="/add-question" className="add-btn">Add Question</Link>
       <div className="questions-list">
         {questions.map(question => (
           <div key={question.id} className="question-item">
@@ -47,7 +45,7 @@ const AdminPage = () => {
             </div>
             <div className="actions">
               <button className="edit-btn">
-                <Link to={`/flash_cards/edit/${question.id}`}>Edit</Link>
+                <Link to={`/edit/${question.id}`}>Edit</Link>
               </button>
               <button className="delete-btn" onClick={() => handleDelete(question.id)}>Delete</button>
             </div>

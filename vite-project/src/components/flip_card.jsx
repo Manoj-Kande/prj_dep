@@ -15,14 +15,8 @@ const FlipPage = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch('https://backend-wine-theta.vercel.app/questions')
-      .then(response => {
-        if (response.ok) {
-          // throw new Error('Network response was not ok');
-          console.log("data fetched correctly");
-        }
-        return response.json();
-      })
+    fetch('http://localhost:5000/questions')
+      .then(response => response.json())
       .then(data => setQuestions(data))
       .catch(error => console.error('Error fetching data:', error));
   }, []);
@@ -82,19 +76,19 @@ const FlipPage = () => {
   const handleSubmit = () => {
     const newScore = calculateScore();
     setScore(newScore);
-    navigate('/flash_cards/score', { state: { score: newScore, totalQuestions: questions.length } });
+    navigate('/score', { state: { score: newScore, totalQuestions: questions.length } });
   };
 
   const handleQuitQuiz = () => {
     setShowPopup(true);
     setTimeout(() => {
       setShowPopup(false);
-      navigate('/flash_cards/score', { state: { score: calculateScore(), totalQuestions: questions.length } });
+      navigate('/score', { state: { score: calculateScore(), totalQuestions: questions.length } });
     }, 2000);
   };
 
   const handleAdminClick = () => {
-    navigate('/flash_cards/admin');
+    navigate('/admin');
   };
 
   if (questions.length === 0) {
@@ -106,7 +100,7 @@ const FlipPage = () => {
   return (
     <div className="flip-page-container">
       <div className='divs'>
-        <button onClick={handleAdminClick} className="admin-button">
+        <button onClick={handleAdminClick}   style={{color:'black'}} className="admin-button">
           Admin
         </button>
       </div>
@@ -115,12 +109,12 @@ const FlipPage = () => {
           <p>Exiting from the quiz...</p>
         </div>
       )}
-
+      
       <div className={`card-container ${flipped ? 'flipped' : ''}`}>
         <div className="card">
           <div className="card-front">
             <h2>{currentQuestion.question}</h2>
-            <button onClick={handleFlip} className="flip-button">Show Options</button>
+            <button onClick={handleFlip} style={{ color: 'black' }}>Show Options</button>
           </div>
           <div className="card-back">
             <h2>{currentQuestion.question}</h2>
@@ -138,9 +132,9 @@ const FlipPage = () => {
                 </label>
               ))}
             </div>
-            <button onClick={handleShowAnswer} className="show-answer-button">Show Answer</button>
+            <button onClick={handleShowAnswer} style={{ color: 'black' }}>Show Answer</button>
             {showAnswer && <p>Correct Answer: {currentQuestion.correct_answer}</p>}
-            <button onClick={handleFlip} className="flip-button">Show Question</button>
+            <button onClick={handleFlip} style={{ color: 'black' }}>Show Question</button>
           </div>
         </div>
       </div>

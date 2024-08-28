@@ -25,7 +25,7 @@ const AddQuestion = () => {
   };
 
   const handleSave = () => {
-    fetch('https://backend-wine-theta.vercel.app/questions/add', {
+    fetch('http://localhost:5000/questions', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -39,7 +39,7 @@ const AddQuestion = () => {
       .then(response => {
         if (response.ok) {
           alert('Question added successfully');
-          navigate('/flash_cards/admin'); // Redirect to the admin page
+          navigate('/admin'); // Redirect to the admin page
         } else {
           alert('Failed to add question');
         }
@@ -49,8 +49,6 @@ const AddQuestion = () => {
 
   return (
     <div className="edit-container">
-      
-
       <h1>Add New Question</h1>
       <form>
         <div className="form-row">

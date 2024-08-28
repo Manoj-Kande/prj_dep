@@ -16,7 +16,7 @@ const EditPage = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch(`https://backend-wine-theta.vercel.app/questions/${id}`)
+    fetch(`http://localhost:5000/questions/${id}`)
       .then(response => response.json())
       .then(data => {
         setQuestion(data);
@@ -44,7 +44,7 @@ const EditPage = () => {
   };
 
   const handleSave = () => {
-    fetch(`https://backend-wine-theta.vercel.app/questionsedit/${id}`, {
+    fetch(`http://localhost:5000/questionsedit/${id}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json'
@@ -58,7 +58,7 @@ const EditPage = () => {
       .then(response => {
         if (response.ok) {
           alert('Edited successfully',"response",response);
-          navigate('/flash_cards/admin');
+          navigate('/');
         } else {
           alert('Failed to edit');
         }

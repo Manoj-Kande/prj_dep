@@ -11,11 +11,11 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/flash_cards" element={<FlipPage />} />
-        <Route path="/flash_cards/score" element={<ScorePage />} />
-        <Route path="/flash_cards/edit/:id" element={<EditPage />} />
-        <Route path="/flash_cards/add-question" element={<AddQuestion />} />
-        <Route path="/flash_cards/admin" element={<AdminPage />} />
+        <Route path="/" element={<FlipPage />} />
+        <Route path="/score" element={<ScorePage />} />
+        <Route path="/edit/:id" element={<EditPage />} />
+        <Route path="/add-question" element={<AddQuestion />} />
+        <Route path="/admin" element={<AdminPage />} />
       </Routes>
     </Router>
   );

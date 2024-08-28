@@ -8,7 +8,7 @@ const ScorePage = () => {
   const { score, totalQuestions } = location.state || { score: 0, totalQuestions: 0 };
 
   const handleBackToQuiz = () => {
-    navigate('/flash_cards');
+    navigate('/');
   };
 
   return (
