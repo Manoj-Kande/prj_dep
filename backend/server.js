@@ -9,7 +9,7 @@ app.use(cors());
 app.use(express.json()); 
 
 app.get("/",(req,res)=>{
-    res.send("backend i sworking properly");
+    res.send("backend i sworking properly changed");
 });
 // app.post('/questions', async (req, res) => {
 //     let q = [];
