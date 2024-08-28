@@ -15,7 +15,7 @@ const FlipPage = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch('https://frontend-five-mauve-98.vercel.app/questions')
+    fetch('https://backend-wine-theta.vercel.app/questions')
       .then(response => {
         if (response.ok) {
           // throw new Error('Network response was not ok');

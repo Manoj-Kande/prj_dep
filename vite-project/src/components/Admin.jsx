@@ -6,14 +6,14 @@ const AdminPage = () => {
   const [questions, setQuestions] = useState([]);
 
   useEffect(() => {
-    fetch('https://frontend-five-mauve-98.vercel.app/questions/')
+    fetch('https://backend-wine-theta.vercel.app/questions/')
       .then(response => response.json())
       .then(data => setQuestions(data))
       .catch(error => console.error('Error fetching questions:', error));
   }, []);
 
   const handleDelete = (id) => {
-    fetch(`https://frontend-five-mauve-98.vercel.app/questions/${id}/delete`, {
+    fetch(`https://backend-wine-theta.vercel.app/questions/${id}/delete`, {
       method: 'DELETE'
     })
       .then(response => {
