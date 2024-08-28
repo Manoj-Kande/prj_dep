@@ -25,7 +25,7 @@ const AddQuestion = () => {
   };
 
   const handleSave = () => {
-    fetch('http://localhost:5000/questions', {
+    fetch('https://backend-wine-theta.vercel.app/questions', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'

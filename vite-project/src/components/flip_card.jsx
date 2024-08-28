@@ -15,7 +15,7 @@ const FlipPage = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch('http://localhost:5000/questions')
+    fetch('https://backend-wine-theta.vercel.app/questions')
       .then(response => response.json())
       .then(data => setQuestions(data))
       .catch(error => console.error('Error fetching data:', error));

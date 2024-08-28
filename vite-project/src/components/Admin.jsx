@@ -6,14 +6,14 @@ const AdminPage = () => {
   const [questions, setQuestions] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:5000/questions')
+    fetch('https://backend-wine-theta.vercel.app/questions')
       .then(response => response.json())
       .then(data => setQuestions(data))
       .catch(error => console.error('Error fetching questions:', error));
   }, []);
 
   const handleDelete = (id) => {
-    fetch(`http://localhost:5000/questions/${id}`, {
+    fetch(`https://backend-wine-theta.vercel.app/questions/${id}`, {
       method: 'DELETE'
     })
       .then(response => {

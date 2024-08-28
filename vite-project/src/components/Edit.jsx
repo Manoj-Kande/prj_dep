@@ -16,7 +16,7 @@ const EditPage = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch(`http://localhost:5000/questions/${id}`)
+    fetch(`https://backend-wine-theta.vercel.app/questions/${id}`)
       .then(response => response.json())
       .then(data => {
         setQuestion(data);
@@ -44,7 +44,7 @@ const EditPage = () => {
   };
 
   const handleSave = () => {
-    fetch(`http://localhost:5000/questionsedit/${id}`, {
+    fetch(`https://backend-wine-theta.vercel.app/questionsedit/${id}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json'
